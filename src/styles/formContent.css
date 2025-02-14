@@ -108,6 +108,7 @@
     padding: .6rem 0 0 1rem;
     font-weight: 200;
     font-size: .8rem;
+    cursor: pointer;
 }
 
 .sub-container .first-card:hover,
@@ -195,9 +196,8 @@ option:checked {
 
 @media(max-width:768px) {
     .form-content {
-        width: 84%;
+    margin-bottom: 3rem;
     }
-
     .form-content header {
         flex-direction: column;
         align-items: flex-start;
@@ -208,8 +208,10 @@ option:checked {
     }
 
     .form-content {
+        width: 84%;
         background: linear-gradient(to top left, #00c0fb10, #00c0fb10, #00c0fb10, #00c0fb10, #00000000);
         height: auto;
+        margin-top: 1rem;
     }
 
     .form-content .section-container {

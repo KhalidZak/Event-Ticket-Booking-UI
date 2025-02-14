@@ -1,8 +1,5 @@
-import "../styles/selectTicket.css";
-
-import { FormContent } from "./FormContent";
 import { Header } from "./Header";
-
+import { FormContent } from "./FormContent";
 export const SelectTicket = () => {
   return (
     <div className="select-ticket">

@@ -1,0 +1,237 @@
+.attendee-content {
+    background: #041E23;
+    color: white;
+    border: 1px solid#0E464F;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin-top: 2.5rem;
+    width: 42rem;
+    height: auto;
+    margin-bottom: 7rem;
+}
+
+.attendee-content header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 36.5rem;
+    margin-top: 2.5rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #24A0B5 40%, #0E464F 40%);
+    border-image-slice: 1;
+}
+
+.attendee-content header .title {
+    font-size: 33px;
+}
+
+.attendee-content header .process {
+    font-family: Roboto;
+}
+
+.attendee-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid#0E464F;
+    border-radius: 40px;
+    margin: 2rem 0 3rem 0;
+    height: auto;
+    width: 36.5rem;
+    background: linear-gradient(to top, #064e643b, #064e6417, #064e6417, #064e643f);
+}
+
+.img-container {
+    width: 32.5rem;
+    height: 20rem;
+    border: 1px solid#0E464F;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.205);
+    margin-top: 2rem;
+    position: relative;
+}
+
+.picture-instruct {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+
+}
+
+.picture-back {
+    width: 30rem;
+    height: 11rem;
+    background: hsla(0, 0%, 0%, 0.116);
+    margin: 5rem 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+    position: relative;
+}
+
+.picture {
+    border: 3px solid#136d7a;
+    width: 15rem;
+    height: 15rem;
+    z-index: 1;
+    margin-top: -12.7rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+    line-height: 1.4rem;
+    background-color: #136c7a91;
+}
+
+.seperation {
+    width: 32rem;
+    height: 2px;
+    background: #0E464F;
+    margin: 2rem 0;
+}
+
+.form label {
+    font-size: 1rem;
+}
+
+.form input,
+textarea {
+    width: 32rem;
+    background: none;
+    color: white;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    border: 1px solid#0E464F;
+    font-size: 1rem;
+    outline: none;
+    border-radius: .7rem;
+    padding: 10px;
+}
+
+.form input {
+    margin: .5rem 0 1.5rem 0;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #00ffccb2;
+    box-shadow: 0 0 10px #00ffcca4;
+}
+
+.form textarea {
+    height: 10rem;
+    margin: .7rem;
+}
+
+
+
+
+/* Media query */
+
+@media(max-width:768px) {
+    .attendee-content {
+        margin-bottom: 3rem;
+        width: 84%;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .attendee-content header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        border-image: linear-gradient(to right, #24A0B5 80%, #0E464F 80%);
+        border-image-slice: 1;
+        width: 87%;
+    }
+
+    .attendee-section-container {
+        width: 90%;
+    }
+
+    .section-container .seperation {
+        width: 75%;
+    }
+
+    .img-container {
+        width: 90%;
+    }
+
+    .picture-back {
+        width: 90%;
+        height: 50%;
+    }
+
+    .picture {
+        width: 80%;
+        height: 80%;
+    }
+
+    .sub-container .first-card,
+    .second-card,
+    .third-card {
+        width: 28rem;
+        height: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+
+    .sub-container .first-card span,
+    .second-card span,
+    .third-card span {
+        font-size: 1.4rem;
+    }
+
+    .sub-container .first-card div,
+    .second-card div,
+    .third-card div {
+        font-size: 1.2rem;
+        padding-top: 5px;
+    }
+
+    .tech-fest-card-group {
+        width: 27rem;
+    }
+
+    .selection-container {
+        width: 30rem;
+    }
+
+    .selection-container label {
+        margin-left: -21.9rem;
+    }
+
+    .control-buttons {
+        width: 30rem;
+    }
+
+    .tech-fest-card-group .sub-container {
+        background: #041e23c7;
+    }
+
+    .form input,
+    textarea {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 709px) {
+    .seperation{
+        width: 70%;
+    }
+    .form input,
+    textarea {
+        width: 15rem;
+    }
+}

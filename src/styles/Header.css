@@ -7,7 +7,7 @@
     justify-self: center;
     align-items: center;
     border: 1px solid #0E464F;
-    border-radius: 21px;
+    border-radius: 17px;
 }
 
 .nav-icons {
@@ -53,10 +53,11 @@
     .nav {
         width: 80%;
         padding: 10px;
+        margin-top: .8rem;
     }
 
     .nav-ticket-button img {
-        width: 7rem;
+        width: 9rem;
     }
 
     .nav-icons img {
@@ -66,7 +67,7 @@
 
 @media(max-width:574px) {
     .nav-ticket-button img {
-        width: 6rem;
+        width: 7.5rem;
     }
 
     .nav-icons img {
