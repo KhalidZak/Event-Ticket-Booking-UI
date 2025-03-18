@@ -417,7 +417,7 @@ option:checked {
 
 @media(max-width:452px) {
     .section-container .tech-fest-card {
-        width: 63%;
+        width: 57%;
     }
 
     .tech-fest-card h1 {
@@ -437,11 +437,11 @@ option:checked {
     }
 
     .tech-fest-card-group .option {
-        margin-left: 4.5rem;
+        margin-left: 3.2rem;
     }
 
     .tech-fest-card-group .sub-container {
-        width: 84%;
+        width: 77%;
     }
 
     .sub-container .first-card h2,
@@ -463,15 +463,15 @@ option:checked {
     }
 
     .selection-container .select {
-        width: 22rem;
+        width: 20.4rem;
     }
 
     .selection-container label {
-        margin-left: -14rem;
+        margin-left: -12rem;
     }
 
     .control-buttons {
-        width: 22rem;
+        width: 20.2rem;
     }
 
     .control-buttons .cancel,
