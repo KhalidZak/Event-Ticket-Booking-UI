@@ -1,4 +1,4 @@
-import "../styles/SelectTicPage.css";
+import "../styles/selectTicPage.css";
 
 interface ControlButtonsProps {
   onNext: () => void;
