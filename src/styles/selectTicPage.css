@@ -316,6 +316,41 @@ option:checked {
     }
 }
 
+@media (max-width:617px) {
+    .section-container .tech-fest-card {
+        width: 30rem;
+    }
+
+    .section-container .seperation {
+        width: 30rem;
+    }
+
+    .tech-fest-card-group .option {
+        margin-left: -1.3rem;
+    }
+
+    .tech-fest-card-group .sub-container {
+        width: 30rem;
+    }
+
+    .selection-container .select {
+        width: 30rem;
+    }
+
+    .selection-container label {
+        margin-left: -21.7rem;
+    }
+
+    .control-buttons {
+        width: 30rem;
+    }
+
+    .control-buttons .cancel,
+    .next {
+        width: 10rem;
+    }
+}
+
 @media(max-width:574px) {
     .section-container .tech-fest-card {
         width: 70%;
@@ -414,6 +449,113 @@ option:checked {
         width: 9rem;
     }
 }
+
+@media(max-width:492px) {
+    .section-container .tech-fest-card {
+        width: 67%;
+    }
+
+    .tech-fest-card h1 {
+        font-size: 3.5rem;
+    }
+
+    .tech-fest-card .first-p {
+        font-size: .9rem;
+        width: 100%;
+    }
+
+    .tech-fest-card .second-p {
+        width: 90%;
+        line-height: 1.3rem;
+    }
+
+    .section-container .seperation {
+        width: 67%;
+    }
+
+    .tech-fest-card-group .option {
+        margin-left: 1.1rem;
+    }
+
+    .tech-fest-card-group .sub-container {
+        width: 93%;
+    }
+
+    .selection-container .select {
+        width: 25rem;
+    }
+
+    .selection-container label {
+        margin-left: -17rem;
+    }
+
+    .selection-container .select {
+        width: 25rem;
+    }
+
+    .control-buttons {
+        width: 25rem;
+    }
+
+    .control-buttons .cancel,
+    .next {
+        width: 9rem;
+    }
+}
+
+@media(max-width:480px) {
+    .section-container .tech-fest-card {
+        width: 65%;
+    }
+
+    .tech-fest-card h1 {
+        font-size: 3.5rem;
+    }
+
+    .tech-fest-card .first-p {
+        font-size: .9rem;
+        width: 100%;
+    }
+
+    .tech-fest-card .second-p {
+        width: 90%;
+        line-height: 1.3rem;
+    }
+
+    .section-container .seperation {
+        width: 65.8%;
+    }
+
+    .tech-fest-card-group .option {
+        margin-left: 1.5rem;
+    }
+
+    .tech-fest-card-group .sub-container {
+        width: 90%;
+    }
+
+    .selection-container .select {
+        width: 25rem;
+    }
+
+    .selection-container label {
+        margin-left: -15.7rem;
+    }
+
+    .selection-container .select {
+        width: 24rem;
+    }
+
+    .control-buttons {
+        width: 24rem;
+    }
+
+    .control-buttons .cancel,
+    .next {
+        width: 9rem;
+    }
+}
+
 
 @media(max-width:452px) {
     .section-container .tech-fest-card {
@@ -541,22 +683,26 @@ option:checked {
     }
 
     .selection-container .select {
-        width: 14.5rem;
+        width: 16.3rem;
     }
 
     .selection-container label {
-        margin-left: -6 rem;
+        margin-left: -7.9rem;
     }
 
     .control-buttons {
-        width: 14.5rem;
+        width: 16.4rem;
     }
 }
 
-@media(max-width:364px) {
+
+@media(max-width:345px) {
+    .section-container .tech-fest-card {
+        width: 16rem;
+    }
 
     .section-container .seperation {
-        width: 46.5%;
+        width: 44%;
     }
 
     .sub-container .first-card h2,
@@ -578,11 +724,22 @@ option:checked {
     }
 
     .tech-fest-card-group .sub-container {
-        width: 65%;
+        width: 60%;
+    }
+
+    .selection-container label {
+        margin-left: -7.6rem;
     }
 
     .control-buttons .cancel,
     .next {
         width: 6.5rem;
+    }
+
+    .selection-container .select {
+        width: 16rem;
+    }
+    .control-buttons{
+        width: 16.1rem;
     }
 }
