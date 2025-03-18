@@ -1,0 +1,83 @@
+.nav {
+    width: 84vw;
+    padding: 1rem;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+    justify-self: center;
+    align-items: center;
+    border: 1px solid #0E464F;
+    border-radius: 17px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-icons img {
+    width: 45px;
+}
+
+.nav .nav-texts {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    gap: 3rem;
+}
+
+.nav-texts .event,
+.my-ticket,
+.about-project {
+    color: #ffffff88;
+    cursor: pointer;
+}
+
+.nav-texts .event:hover,
+.my-ticket:hover,
+.about-project:hover {
+    color: #ffffffd2;
+}
+
+.nav-ticket-button img {
+    width: 10rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-ticket-button img:hover {
+    transform: translateY(-3px);
+}
+.nav-ticket-button img:active {
+    transform: translateY(3px);
+}
+@media(max-width:768px) {
+    .nav .nav-texts {
+        display: none;
+    }
+
+    .nav {
+        width: 90%;
+        padding: 10px;
+        margin-top: .8rem;
+    }
+
+    .nav-ticket-button img {
+        width: 9rem;
+    }
+
+    .nav-icons img {
+        width: 2.5rem;
+    }
+}
+
+@media(max-width:574px) {
+    .nav-ticket-button img {
+        width: 7.5rem;
+    }
+
+    .nav-icons img {
+        width: 2.3rem;
+    }
+
+}

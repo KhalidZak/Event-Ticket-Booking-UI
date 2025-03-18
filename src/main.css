@@ -1,0 +1,31 @@
+@import url(https://db.onlinewebfonts.com/c/1a5c2d8bbd4e28d99a6efcbb9a5b378f?family=JejuMyeongjo);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100vw; 
+  }
+  
+body {
+    max-width: 100vw;
+    height: auto;
+    background-color: #02191D;
+    background-image: radial-gradient(circle 130vh at 50% 140%, #00c0fb46, #00000000);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: JejuMyeongjo;
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width:768px) {
+    body {
+    background-image: none;
+    }
+} 

@@ -1,0 +1,14 @@
+.ticket-ready{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    border: 1px solid#0E464F;
+    border-radius: 40px;
+    margin-top: 2rem;
+    height: auto;
+    width: 50rem;
+    color: white;
+
+}
