@@ -1,60 +1,150 @@
-import { useState } from "react";
-// import "../styles/formPage.css";
+import "../styles/formPage.css";
+import { useRef, useState } from "react";
 import { Header } from "../components/Header";
-// import { ControlButtons } from "../components/ControlButtons";
 import cloudDownload from "../assets/icons/cloudDownload.svg";
+import { ControlButtons } from "../components/ControlButtons";
+import axios from "axios";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const FormPage: React.FC = () => {
-    const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      message: "",
-    });
+  const location = useLocation();
+  const { selectedCard, tickNum } = location.state || {};
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [image, setImage] = useState<File | null>(null);
+  const [error, setError] = useState<{ image?: string; form?: string }>({});
+  const navigate = useNavigate();
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-  
-    const handleSubmit = (e: React.FormEvent) => {
-      e.preventDefault();
-      console.log("Form Data:", formData);
-    };
-  
+  const cloudName = "dauw5x4uy";
+  const uploadPreset = "Candidate";
+
+  //handle file selection for image
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setImage(file);
+      setError((prev) => ({ ...prev, image: undefined })); //clear image error 
+    }
+  };
+
+  const triggerFileSelect = () => {
+    fileInputRef.current?.click();
+  }
+
+  //input change handler for form
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+    const updatedForm = { ...formData, [name]: value };
+    setFormData(updatedForm);
+
+    //only clear form error if all fields are now filled
+    if (
+      updatedForm.name.trim() &&
+      updatedForm.email.trim() &&
+      updatedForm.message.trim()
+    ){
+      setError((prev)=>({...prev, form:undefined}));
+    }
+  };
+
+  //handle upload for all
+  const handleUpload = async () => {
+    const { name, email, message } = formData;
+    let hasError = false;
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError((prev) => ({ ...prev, form: "Please fill in all form fields" }));
+      hasError = true;
+    } else {
+      setError((prev) => ({ ...prev, form: undefined }));
+    }
+
+    if (!image) {
+      setError((prev) => ({ ...prev, image: "please select an image" }));
+      hasError = true;
+    } else {
+      setError((prev) => ({ ...prev, image: undefined }));
+    }
+
+    //stop if any error exist
+    if (hasError) {
+      return
+    }
+
+    const data = new FormData();
+    data.append('file', image!);
+    data.append('upload_preset', uploadPreset);
+
+    try {
+      const res = await axios.post(
+        `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+        data
+      );
+      const imageUrl = res.data.secure_url;
+
+      navigate("/DownloadTicPage", {
+        state: {
+          formData,
+          imageUrl,
+          selectedCard,
+          tickNum,
+        },
+      });
+    } catch (err: unknown) {
+      setError((prev) => ({ ...prev, image: "upload failed." }));
+      console.log(err);
+    }
+  }
+
   return (
-  <div className="form-page">
-    <Header />
-    <div className="form-page--content">
-    <header>
-        <div className="title">Ticket Selection</div>
-        <div className="process">Step 2/3</div>
-    </header>   
-    
-      <div className="form-page-section--container">
-        <div className="img-container">
-          <div className="picture-instruct">Upload Profile Picture  </div>
-          <div className="picture-back">  </div>
-          <div className="picture">
-            <img src={cloudDownload} alt="" />
-            Drag & drop or click to<br/>upload
+    <>
+      <Header />
+      <div className="form-page">
+        <div className="form">
+          <header className="form__header">
+            <div className="form__header-title">Attendee Details</div>
+            <div className="form__header-process">Step 2/3</div>
+          </header>
+
+          <div className="form__upload-section">
+            <div className="img-container">
+              <div className="picture-instruct">Upload Profile Photo</div>
+              <div className="picture-back"></div>
+              <div className="picture" onClick={triggerFileSelect} style={{ cursor: "pointer" }}>
+                <img src={cloudDownload} alt="upload icon" />
+                {image ? (<div>{image.name}</div>) : (<>
+                  <div>Drag & drop or click to</div>
+                  <div>upload</div>
+                </>
+                )}
+                <input type="file" accept="image/*" onChange={handleFileChange} ref={fileInputRef} style={{ display: "none" }} />
+              </div>
+            </div>
+            <div>{error.image}</div>
+
+            <div className="separation"></div>
+
+            <form className="form__inputs">
+              <div>
+                <label htmlFor="name">Enter your name</label><br />
+                <input id="name" type="text" name="name" required autoComplete="off" onChange={handleInputChange} />
+              </div><br />
+              <div>
+                <label htmlFor="email">Enter Email*</label><br />
+                <input id="email" type="email" name="email" required autoComplete="off" onChange={handleInputChange} />
+              </div><br />
+              <div>
+                <label htmlFor="message">Special request?</label><br />
+                <textarea id="message" name="message" required placeholder="Textarea" onChange={handleInputChange}></textarea>
+              </div><br />
+            </form>
+            {error.form && <p className="error">{error.form}</p>}
+            <div className="control-buttons">
+              <ControlButtons onNext={handleUpload} onCancel={() => navigate("/")} nextRoute="Next" cancelRoute="Cancel" />
+            </div>
           </div>
+        </div>
       </div>
-
-      <div className="seperation"></div>
-
-      <div className="form-container">
-      <form onSubmit={handleSubmit} className="form">
-        <label htmlFor="name">Enter your name</label><br/>
-          <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} required /><br/>
-        <label htmlFor="email">Enter Email*</label><br/>
-          <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} required /><br/>
-        <label htmlFor="message">Special request?</label><br/>
-          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required placeholder="Textarea"></textarea><br/>
-      </form>
-    </div>
-    {/* <ControlButtons nextRoute="TicketReady" cancelRoute="/"/> */}
-    </div>
-  </div>
-  </div>
+    </>
   )
 }
 

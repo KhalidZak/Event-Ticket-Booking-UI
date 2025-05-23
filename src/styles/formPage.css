@@ -1,4 +1,4 @@
-.attendee-content {
+.form-page {
     background: #041E23;
     color: white;
     border: 1px solid#0E464F;
@@ -11,28 +11,31 @@
     width: 42rem;
     height: auto;
     margin-bottom: 7rem;
+    font-family: roboto;
 }
 
-.attendee-content header {
+.form__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 36.5rem;
     margin-top: 2.5rem;
     border-bottom: 3px solid;
-    border-image: linear-gradient(to right, #24A0B5 40%, #0E464F 40%);
+    border-image: linear-gradient(to right, #24A0B5 60%, #0E464F 40%);
     border-image-slice: 1;
 }
 
-.attendee-content header .title {
+.form__header-title {
     font-size: 33px;
+    font-weight: 300;
 }
 
-.attendee-content header .process {
+.form__header-process {
     font-family: Roboto;
+    font-weight: 300;
 }
 
-.attendee-section-container {
+.form__upload-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +53,7 @@
     height: 20rem;
     border: 1px solid#0E464F;
     border-radius: 18px;
-    background: rgba(0, 0, 0, 0.205);
+    background: rgba(49, 81, 102, 0.014);
     margin-top: 2rem;
     position: relative;
 }
@@ -59,23 +62,21 @@
     position: absolute;
     top: 1rem;
     left: 1rem;
+    font-weight: 390;
 
 }
 
 .picture-back {
     width: 30rem;
     height: 11rem;
-    background: hsla(0, 0%, 0%, 0.116);
+    background: #041e23;
     margin: 5rem 0 0 1rem;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     z-index: 0;
-    position: relative;
 }
 
 .picture {
-    border: 3px solid#136d7a;
+    border: 3px solid#23a4b8;
     width: 15rem;
     height: 15rem;
     z-index: 1;
@@ -88,21 +89,29 @@
     justify-self: center;
     text-align: center;
     line-height: 1.4rem;
-    background-color: #136c7a91;
+    background-color: #136c7ab2;
+    cursor: pointer;
 }
 
-.seperation {
+.separation {
     width: 32rem;
     height: 2px;
     background: #0E464F;
     margin: 2rem 0;
 }
 
-.form label {
-    font-size: 1rem;
+.form__inputs div {
+    margin: 5px 0;
 }
 
-.form input,
+.form__inputs label {
+    font-size: 1rem;
+    font-weight: 380;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+.form__inputs input,
 textarea {
     width: 32rem;
     background: none;
@@ -113,10 +122,7 @@ textarea {
     outline: none;
     border-radius: .7rem;
     padding: 10px;
-}
-
-.form input {
-    margin: .5rem 0 1.5rem 0;
+    resize: none;
 }
 
 input:focus,
@@ -125,113 +131,124 @@ textarea:focus {
     box-shadow: 0 0 10px #00ffcca4;
 }
 
-.form textarea {
+.form__inputs textarea {
     height: 10rem;
-    margin: .7rem;
 }
-
-
-
 
 /* Media query */
 
 @media(max-width:768px) {
-    .attendee-content {
+    .form-page {
         margin-bottom: 3rem;
-        width: 84%;
+        width: 90%;
         height: auto;
         margin-top: 1rem;
     }
 
-    .attendee-content header {
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        height: auto;
+    }
+
+    .form__header {
         flex-direction: column;
         align-items: flex-start;
         gap: 7px;
         border-image: linear-gradient(to right, #24A0B5 80%, #0E464F 80%);
         border-image-slice: 1;
-        width: 87%;
     }
 
-    .attendee-section-container {
-        width: 90%;
-    }
-
-    .section-container .seperation {
-        width: 75%;
+    .form__upload-section {
+        display: contents;
     }
 
     .img-container {
-        width: 90%;
+        width: 36rem;
+        height: 25rem;
     }
 
     .picture-back {
-        width: 90%;
-        height: 50%;
+        display: none;
     }
 
     .picture {
         width: 80%;
         height: 80%;
+        margin: 3rem;
     }
 
-    .sub-container .first-card,
-    .second-card,
-    .third-card {
-        width: 28rem;
-        height: 12rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 1.5rem;
-        margin: 1rem 0;
-        padding: 1rem;
+    .separation {
+        width: 36rem
     }
 
-    .sub-container .first-card span,
-    .second-card span,
-    .third-card span {
-        font-size: 1.4rem;
-    }
-
-    .sub-container .first-card div,
-    .second-card div,
-    .third-card div {
-        font-size: 1.2rem;
-        padding-top: 5px;
-    }
-
-    .tech-fest-card-group {
-        width: 27rem;
-    }
-
-    .selection-container {
-        width: 30rem;
-    }
-
-    .selection-container label {
-        margin-left: -21.9rem;
-    }
-
-    .control-buttons {
-        width: 30rem;
-    }
-
-    .tech-fest-card-group .sub-container {
-        background: #041e23c7;
-    }
-
-    .form input,
+    .form__inputs input,
     textarea {
+        width: 36rem;
+    }
+
+    .controlbuttons {
         width: 20rem;
     }
 }
 
-@media (max-width: 709px) {
-    .seperation{
-        width: 70%;
+@media (max-width: 670px) {
+    .form__header {
+        width: 90%;
     }
-    .form input,
+
+    .img-container {
+        width: 90%;
+        height: 21rem;
+    }
+
+    .picture-instruct {
+        position: static;
+        display: flex;
+        justify-self: center;
+        margin-top: 1rem;
+    }
+
+    .picture {
+        margin-top: 1.5rem;
+        height: 15rem;
+    }
+
+    .separation {
+        width: 90%;
+    }
+
+    .form__inputs input,
     textarea {
-        width: 15rem;
+        width: 27rem;
+    }
+
+    @media (max-width: 617px) {
+        .img-container {
+            height: 18rem;
+        }
+
+        .picture {
+            height: 13rem;
+        }
+
+        .nav-ticket-button img {
+            width: 7rem;
+        }
+
+        .form__inputs input,
+        textarea {
+            width: 23rem;
+        }
+    }
+}
+
+@media (max-width: 440px) {
+
+    .form__inputs input,
+    textarea {
+        width: 18rem;
     }
 }

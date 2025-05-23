@@ -7,16 +7,35 @@ import { Header } from "../components/Header";
 
 export const SelectTicPage: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
-  const [error, setError] = useState<string>('');
+  const [tickNum, setTickNum] = useState<string | number | readonly string[] | undefined>(undefined);
+  const [tickTypeErro, setTickTypeError] = useState<string>('');
+  const [tickNumError, setTickNumError] = useState<string>('');
   const navigate = useNavigate();
 
   const handleNext = () => {
+    let hasError = false;
     if (!selectedCard) {
-      setError("You have not selected the ticket type!");
+      setTickTypeError('You have nnot selected the card type!');
+      hasError = true;
+    } else {
+      setTickTypeError('');
+    }
+
+    if (!tickNum || tickNum === '') {
+      setTickNumError('You have not selected the number of cards!');
+      hasError = true;
+    } else {
+      setTickNumError('');
+    }
+
+    if (hasError) {
       return;
     }
-    setError('');
-    navigate("/FormPage");
+    navigate("/FormPage", {
+      state: {
+        selectedCard, tickNum
+      },
+    });
   }
 
   const handleCancel = () => {
@@ -28,29 +47,29 @@ export const SelectTicPage: React.FC = () => {
   }
   //
   const handleFirstCard = () => {
-    handleClick("firstCard");
+    handleClick("REGULAR ACCESS");
   }
   const firstCardChange = {
-    backgroundColor: selectedCard === "firstCard" ? "rgba(255, 255, 255, 0.192)" : ''
+    backgroundColor: selectedCard === "REGULAR ACCESS" ? "rgba(255, 255, 255, 0.192)" : ''
   }
   //
   const handleSecCard = () => {
-    handleClick("sectCard");
+    handleClick("VIP ACCESS");
   }
   const secCardChange = {
-    backgroundColor: selectedCard === "sectCard" ? "rgba(255, 255, 255, 0.192)" : ''
+    backgroundColor: selectedCard === "VIP ACCESS" ? "rgba(255, 255, 255, 0.192)" : ''
   }
   //
   const handleThirdCard = () => {
-    handleClick("thirdCard");
+    handleClick("VVIP ACCESS");
   }
   const thirdCardChange = {
-    backgroundColor: selectedCard === "thirdCard" ? "rgba(255, 255, 255, 0.192)" : ''
+    backgroundColor: selectedCard === "VVIP ACCESS" ? "rgba(255, 255, 255, 0.192)" : ''
   }
 
   return (
     <>
-    <Header />
+      <Header />
       <div className="form-content">
         <header>
           <div className="title">Ticket Selection</div>
@@ -77,23 +96,25 @@ export const SelectTicPage: React.FC = () => {
                 <div className="number">20/52</div>
               </div>
               <div className="third-card" onClick={handleThirdCard} style={thirdCardChange}>
-                <h2>$150</h2><br />
+                <h2>$300</h2><br />
                 <span>VVIP ACCESS</span>
                 <div className="number">20/52</div>
               </div>
             </div>
+            {tickTypeErro && <p style={{ color: "red", marginTop: ".3rem" }}>{tickTypeErro}</p>}
           </div>
           <div className="selection-container">
             <label htmlFor="number-of-tickets">Number of Tickets</label><br />
-            <select className="select" id="tickets-number">
+            <select className="select" id="tickets-number" value={tickNum} onChange={(e) => setTickNum(e.target.value)}>
+              <option value={""} disabled selected>select number of tickets</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
+            {tickNumError && <p style={{ color: "red", margin: ".3rem 0 0 -13.7rem" }}>{tickNumError}</p>}
             <ControlButtons onNext={handleNext} onCancel={handleCancel} nextRoute="Next" cancelRoute="Cancel" />
-            {error && <p style={{ color: "red", marginBottom: "1rem"}}>{error}</p>}
           </div>
         </div>
       </div>

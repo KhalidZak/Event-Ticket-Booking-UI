@@ -65,8 +65,8 @@
 .tech-fest-card h1 {
     font-family: Road Rage;
     word-spacing: 2px;
-    letter-spacing: 2px;
     font-size: 54px;
+    font-weight: 500;
 }
 
 .tech-fest-card .first-p {
@@ -111,9 +111,7 @@
     cursor: pointer;
 }
 
-.sub-container .first-card:hover,
-.second-card:hover,
-.third-card:hover {
+.sub-container >*:hover{
     background: rgba(255, 255, 255, 0.192);
 }
 

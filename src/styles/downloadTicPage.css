@@ -1,0 +1,197 @@
+.ticket-ready {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    border: 1px solid#0E464F;
+    border-radius: 40px;
+    margin-top: 2rem;
+    height: auto;
+    width: 50rem;
+    color: white;
+    font-family: roboto;
+}
+
+.ticket-ready .heading {
+    font-size: .9rem;
+    margin-top: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heading .text {
+    font-size: .9rem;
+    word-spacing: .1rem;
+}
+
+.e-tick {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.e-tick .pic-frame {
+    height: 46rem;
+    margin-bottom: 1.5rem;
+    /* position: absolute; */
+}
+
+.tic-info {
+    width: 20rem;
+    height: 34rem;
+    border: 1px solid #448e99;
+    border-radius: 20px;
+    position: absolute;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tic-info h1 {
+    font-family: Road Rage;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+.tic-info>div {
+    font-size: .8rem;
+}
+
+.tic-picture {
+    object-fit: cover;
+    object-position: center;
+    width: 10.5rem;
+    height: 10.5rem;
+    border: 4px solid#73e0ce;
+    background-color: #489dc5;
+    border-radius: 16px;
+    margin-top: 2rem;
+}
+
+.tic-info .table {
+    background: hsla(199, 52%, 53%, .1);
+    border-radius: 16px;
+    padding: .8rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-width: 18rem;
+}
+
+.table .user-info {
+    display: flex;
+    /* gap: 3rem; */
+    border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+
+.user-info_name .name {
+    max-width: 8rem;
+    word-break: break-word;
+}
+
+.user-info_name div {
+    height: auto;
+    min-height: 2.2rem;
+    height: auto;
+    text-align: left;
+    width: 7.5rem;
+    padding: .3rem;
+    border-right: 1px solid rgba(255, 255, 255, .4);
+}
+
+.table .title {
+    color: rgba(255, 255, 255, .4);
+}
+
+.user-info_name .name,
+.user-info_contact .mail {
+    font-weight: 800;
+    font-size: .9rem
+}
+
+.user-info_contact .mail {
+    max-width: 8rem;
+    word-break: break-word;
+
+}
+
+.user-info_contact div {
+    margin-left: .7rem;
+    text-align: left;
+    padding: .3rem;
+}
+
+.table_tic-info {
+    text-align: left;
+    display: flex;
+    /* gap: 5rem; */
+    border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+
+.tic-info_type div {
+    width: 7.5rem;
+    padding: .3rem;
+    border-right: 1px solid rgba(255, 255, 255, .4);
+}
+
+.tic-info_type .the-type,
+.tic-info_numb .the-numb {
+    font-weight: 800;
+    font-size: .9rem
+}
+
+.tic-info_numb div {
+    margin-left: .7rem;
+    text-align: left;
+    padding: .3rem;
+}
+
+.special-request {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 18px;
+    margin-top: 8px;
+}
+
+.special-request> :first-child {
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, .4);
+}
+
+.barcode {
+    /* background: none; */
+    position: absolute;
+    bottom: 2rem;
+}
+
+/* media query */
+@media (max-width: 768px) {
+    html{
+        font-size: 80%;
+    }
+    .barcode{
+        bottom: 6rem;
+        left: 1.3rem;
+    }
+    .barcode svg{
+        width: 95%;
+    }
+    .control-buttons .next{
+       width: 12rem;
+    }
+    .control-buttons .cancel{
+        width: 12rem;
+     }
+}

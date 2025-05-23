@@ -8,7 +8,7 @@ const AppRoutes:React.FC = () => {
     <Routes>
       <Route path="/" element={<SelectTicPage />} />
       <Route path="/FormPage" element={<FormPage />} />
-      <Route path="/FormPage/DownloadTicPage" element={<DownloadTicPage />} />
+      <Route path="/DownloadTicPage" element={<DownloadTicPage />} />
     </Routes>   
   );
 };
