@@ -33,7 +33,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: auto;
     position: relative;
 }
 
@@ -45,7 +46,7 @@
 
 .tic-info {
     width: 20rem;
-    height: 34rem;
+    /* height: 34rem; */
     border: 1px solid #448e99;
     border-radius: 20px;
     position: absolute;
@@ -177,7 +178,6 @@
 }
 
 @media (max-width:768px) {
-
     .custom-btn .next,
     .custom-btn .cancel {
         width: 12rem;
@@ -185,6 +185,7 @@
 
     .ticket-ready {
         width: 80%;
+        height: auto;
     }
 }
 
@@ -199,7 +200,7 @@
 
     .tic-info {
         width: 80%;
-        height: 72%;
+        /* height: 72%; */
     }
 
     .e-tick .pic-frame {
@@ -214,10 +215,10 @@
         font-size: .7rem;
     }
 
-    .tic-picture {
+    /* .tic-picture {
         width: 65%;
         height: 65%;
-    }
+    } */
 
     .tic-info .table {
         width: 80%;
@@ -266,7 +267,7 @@
     }
 
     .barcode {
-        bottom: 1.rem;
+        bottom: 1.3rem;
     }
 
     .barcode svg {
@@ -276,16 +277,16 @@
 }
 
 @media (max-width: 445px) {
-    .tic-picture {
+    /* .tic-picture {
         width: 70%;
         height: 35%;
-    }
-    
-    .tic-info {
+    } */
+
+    /* .tic-info {
         height: 68%;
-    }
+    } */
     .e-tick .pic-frame {
-        height: 31rem;
+        height: 33.5rem;
     }
 
     .custom-btn {
@@ -306,14 +307,9 @@
         font-size: .7rem;
     }
 
-    .barcode {
-        bottom: .7rem;
-    }
-
     .barcode svg {
         width: 13rem;
     }
-
 
     .tic-info .table {
         margin-top: .2rem;
