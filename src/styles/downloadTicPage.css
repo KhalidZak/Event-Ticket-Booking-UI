@@ -221,7 +221,8 @@
 
     .tic-info .table {
         width: 80%;
-        margin-bottom: 1rem;
+        margin-top: 5px;
+        margin-bottom: 6px;
     }
 
     .table .title {
@@ -262,6 +263,14 @@
     .custom-btn .cancel {
         width: 8rem;
         font-size: 70%;
+    }
+
+    .barcode {
+        bottom: 1.7rem;
+    }
+
+    .barcode svg {
+        width: 18rem;
     }
 
 }
