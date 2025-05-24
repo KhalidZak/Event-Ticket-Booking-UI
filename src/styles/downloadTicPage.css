@@ -199,7 +199,7 @@
 
     .tic-info {
         width: 80%;
-        height: auto;
+        height: 72%;
     }
 
     .e-tick .pic-frame {
@@ -266,7 +266,7 @@
     }
 
     .barcode {
-        bottom: 1.7rem;
+        bottom: 1.rem;
     }
 
     .barcode svg {
@@ -276,6 +276,14 @@
 }
 
 @media (max-width: 445px) {
+    .tic-picture {
+        width: 70%;
+        height: 35%;
+    }
+    
+    .tic-info {
+        height: 68%;
+    }
     .e-tick .pic-frame {
         height: 31rem;
     }
