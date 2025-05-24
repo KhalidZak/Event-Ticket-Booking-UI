@@ -15,7 +15,7 @@ export const SelectTicPage: React.FC = () => {
   const handleNext = () => {
     let hasError = false;
     if (!selectedCard) {
-      setTickTypeError('You have nnot selected the card type!');
+      setTickTypeError('You have not selected the card type!');
       hasError = true;
     } else {
       setTickTypeError('');
@@ -101,7 +101,7 @@ export const SelectTicPage: React.FC = () => {
                 <div className="number">20/52</div>
               </div>
             </div>
-            {tickTypeErro && <p style={{ color: "red", marginTop: ".3rem" }}>{tickTypeErro}</p>}
+            {tickTypeErro && <p style={{ color: "red", margin: ".3rem 0 0 7.3rem" }}>{tickTypeErro}</p>}
           </div>
           <div className="selection-container">
             <label htmlFor="number-of-tickets">Number of Tickets</label><br />
@@ -113,7 +113,7 @@ export const SelectTicPage: React.FC = () => {
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-            {tickNumError && <p style={{ color: "red", margin: ".3rem 0 0 -13.7rem" }}>{tickNumError}</p>}
+            {tickNumError && <p style={{ color: "red", margin: ".3rem 0 0 0" }}>{tickNumError}</p>}
             <ControlButtons onNext={handleNext} onCancel={handleCancel} nextRoute="Next" cancelRoute="Cancel" />
           </div>
         </div>

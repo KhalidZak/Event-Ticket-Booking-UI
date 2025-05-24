@@ -43,8 +43,8 @@ export const DownloadTicPage: React.FC = () => {
     link.click();
   }
 
-  return ( 
-    <div>
+  return (
+    <div className="book-ticket">
       <Header />
       <div className="ticket-ready">
         <div className="heading">
@@ -84,16 +84,16 @@ export const DownloadTicPage: React.FC = () => {
                 </div>
               </div>
               <div className="special-request">
-                <div>Special request?</div>
+                <div className="title">Special request?</div>
                 <div>{formData.message}</div>
               </div>
             </div>
           </div>
           <div className="barcode">
-            <svg ref={barcodeRef}></svg>  
+            <svg ref={barcodeRef}></svg>
           </div>
         </div>
-        <ControlButtons onNext={() => navigate("/")} onCancel={handleDownload} nextRoute="Book Another Ticket" cancelRoute="Download" />
+        <ControlButtons className="custom-btn" onNext={() => navigate("/")} onCancel={handleDownload} nextRoute="Book Another Ticket" cancelRoute="Download Ticket" />
       </div>
     </div>
   )

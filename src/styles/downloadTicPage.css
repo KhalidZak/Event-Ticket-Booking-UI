@@ -176,22 +176,171 @@
     bottom: 2rem;
 }
 
-/* media query */
-@media (max-width: 768px) {
-    html{
+@media (max-width:768px) {
+
+    .custom-btn .next,
+    .custom-btn .cancel {
+        width: 12rem;
+    }
+
+    .ticket-ready {
+        width: 80%;
+    }
+}
+
+@media (max-width: 527px) {
+    .ticket-ready .heading h1 {
+        font-size: 1.5rem;
+    }
+
+    .ticket-ready .heading div {
+        font-size: .8rem;
+    }
+
+    .tic-info {
+        width: 80%;
+        height: auto;
+    }
+
+    .e-tick .pic-frame {
+        height: 41rem;
+    }
+
+    .tic-info .header h1 {
+        font-size: 2rem;
+    }
+
+    .tic-info .header div {
+        font-size: .7rem;
+    }
+
+    .tic-picture {
+        width: 65%;
+        height: 65%;
+    }
+
+    .tic-info .table {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    .table .title {
+        font-size: 90%;
+    }
+
+    .special-request :nth-child(2) {
         font-size: 80%;
     }
-    .barcode{
-        bottom: 6rem;
-        left: 1.3rem;
+
+    .user-info_name .name,
+    .user-info_contact .mail {
+        font-size: 74%;
     }
-    .barcode svg{
-        width: 95%;
+
+    .user-info_name div {
+        width: 6rem;
     }
-    .control-buttons .next{
-       width: 12rem;
+
+    .user-info_contact div {
+        width: 5rem;
     }
-    .control-buttons .cancel{
-        width: 12rem;
-     }
+
+    .tic-info_type .the-type,
+    .tic-info_numb .the-numb {
+        font-size: 80%;
+    }
+
+    .tic-info_type div {
+        width: 6rem;
+    }
+
+    .custom-btn {
+        width: 20rem;
+    }
+
+    .custom-btn .next,
+    .custom-btn .cancel {
+        width: 8rem;
+        font-size: 70%;
+    }
+
+}
+
+@media (max-width: 445px) {
+    .e-tick .pic-frame {
+        height: 31rem;
+    }
+
+    .custom-btn {
+        width: 15rem;
+    }
+
+    .custom-btn .next,
+    .custom-btn .cancel {
+        width: 6rem;
+        font-size: 65%;
+    }
+
+    .ticket-ready .heading h1 {
+        font-size: 1.4rem;
+    }
+
+    .ticket-ready .heading div {
+        font-size: .7rem;
+    }
+
+    .barcode {
+        bottom: .7rem;
+    }
+
+    .barcode svg {
+        width: 13rem;
+    }
+
+
+    .tic-info .table {
+        margin-top: .2rem;
+        width: 11rem;
+        height: 8.3rem;
+    }
+
+    .tic-picture {
+        margin-top: 1px;
+    }
+
+    .table .title {
+        font-size: 75%;
+    }
+
+    .special-request :nth-child(2) {
+        font-size: 70%;
+    }
+
+    .user-info_name .name,
+    .user-info_contact .mail {
+        font-size: 60%;
+    }
+
+    .user-info_name div {
+        width: 4.5rem;
+        /* height: .6rem; */
+    }
+
+    .user-info_contact div {
+        width: 4.5rem;
+        /* height: .6rem; */
+    }
+
+    .tic-info_type .the-type,
+    .tic-info_numb .the-numb {
+        font-size: 70%;
+    }
+
+    .tic-info_type div {
+        width: 4.5rem;
+    }
+
+    .special-request {
+        display: none;
+    }
 }

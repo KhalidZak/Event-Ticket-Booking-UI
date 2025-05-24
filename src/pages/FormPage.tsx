@@ -52,14 +52,14 @@ export const FormPage: React.FC = () => {
     const { name, email, message } = formData;
     let hasError = false;
     if (!name.trim() || !email.trim() || !message.trim()) {
-      setError((prev) => ({ ...prev, form: "Please fill in all form fields" }));
+      setError((prev) => ({ ...prev, form: "Please fill in all form fields!" }));
       hasError = true;
     } else {
       setError((prev) => ({ ...prev, form: undefined }));
     }
 
     if (!image) {
-      setError((prev) => ({ ...prev, image: "please select an image" }));
+      setError((prev) => ({ ...prev, image: "please select an image!" }));
       hasError = true;
     } else {
       setError((prev) => ({ ...prev, image: undefined }));
@@ -119,7 +119,7 @@ export const FormPage: React.FC = () => {
                 <input type="file" accept="image/*" onChange={handleFileChange} ref={fileInputRef} style={{ display: "none" }} />
               </div>
             </div>
-            <div>{error.image}</div>
+            {error.image && <p style={{color: "red", marginTop: "1rem"}}>{error.image}</p>}
 
             <div className="separation"></div>
 
@@ -137,7 +137,7 @@ export const FormPage: React.FC = () => {
                 <textarea id="message" name="message" required placeholder="Textarea" onChange={handleInputChange}></textarea>
               </div><br />
             </form>
-            {error.form && <p className="error">{error.form}</p>}
+            {error.form && <p className="error" style={{color: "red"}}>{error.form}</p>}
             <div className="control-buttons">
               <ControlButtons onNext={handleUpload} onCancel={() => navigate("/")} nextRoute="Next" cancelRoute="Cancel" />
             </div>
